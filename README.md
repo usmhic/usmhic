@@ -6,7 +6,7 @@ Software engineer based in Tangier. I build open-source products, developer tool
 
 | Project                                        | Description                                  |
 | ---------------------------------------------- | -------------------------------------------- |
-| [Apikee](https://github.com/apikee)            | API key management and developer SDKs        |
+| [Apikee](https://github.com/apikee-dev)        | API key management and developer SDKs        |
 | [localm](https://github.com/usmhic/localm)     | Secure gateway for local LLM runtimes        |
 | [Skadoosh](https://github.com/usmhic/skadoosh) | Multilingual publishing and creator platform |
 | [Expenn](https://github.com/usmhic/expenn)     | Expense and travel management for teams      |
