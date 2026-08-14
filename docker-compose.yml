@@ -1,0 +1,21 @@
+name: usmhic-site
+
+services:
+  site:
+    build:
+      context: ./osas.cloud
+      args:
+        APP_URL: ${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+        GITHUB_PAGES_URL: ${NEXT_PUBLIC_GITHUB_PAGES_URL:-https://usmhic.github.io}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    ports:
+      - "3000:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 5s
+      start_period: 5s
+      retries: 3

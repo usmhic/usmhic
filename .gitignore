@@ -1,0 +1,17 @@
+.DS_Store
+
+# Local environment and secret material
+.env
+.env.*
+*.env
+*.env.*
+.envrc
+.envrc.*
+.direnv/
+.flaskenv
+.flaskenv.*
+.streamlit/secrets.toml
+!/.env.example
+
+# Dependencies
+node_modules/

@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Type-check, lint, and build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: osas.cloud
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.6.0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: osas.cloud/pnpm-lock.yaml
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Type-check
+        run: pnpm run types:check
+      - name: Lint
+        run: pnpm run lint
+      - name: Build static export
+        run: pnpm run build
+        env:
+          NEXT_PUBLIC_APP_URL: https://osas.cloud
+          NEXT_PUBLIC_GITHUB_PAGES_URL: https://usmhic.github.io
+
+  container:
+    name: Build container
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: ./osas.cloud
+          file: ./osas.cloud/Dockerfile
+          push: false
+          tags: usmhic-site:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
