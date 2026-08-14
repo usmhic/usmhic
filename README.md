@@ -1,28 +1,29 @@
-# 🚀 Oussama Hichou · **Personal Projects**
+# Hi, I'm Oussama 👋
 
-`@usmhic` software engineer in Tangier, Morocco 🇲🇦. I build useful products,
-developer tools, and AI-friendly systems—then make them easy to run, understand,
-and maintain. ⚡
+Software engineer based in Tangier. I build open-source products, developer tools, and practical systems across web, mobile, cloud, and AI.
 
-## ✨ Personal Projects
+## Open source 🛠️
 
-| Project | What it does | Stack |
-| --- | --- | --- |
-| [localm](https://github.com/usmhic/localm) | Secure OpenAI-compatible gateway for local LLM runtimes | Go, Docker |
-| [skadoosh](https://github.com/usmhic/skadoosh) | Multilingual publishing and creator portfolios | Next.js, Expo, tRPC, PostgreSQL |
-| [Expenn](https://github.com/usmhic/expenn) | Self-hosted expense and travel management for teams | .NET, Next.js, Expo |
-| [FreeSolo](https://github.com/usmhic/freesolo) | Curated solo-travel experiences and community | Spring Boot, Next.js, Expo |
+| Project                                        | Description                                  |
+| ---------------------------------------------- | -------------------------------------------- |
+| [Apikee](https://github.com/apikee)            | API key management and developer SDKs        |
+| [localm](https://github.com/usmhic/localm)     | Secure gateway for local LLM runtimes        |
+| [Skadoosh](https://github.com/usmhic/skadoosh) | Multilingual publishing and creator platform |
+| [Expenn](https://github.com/usmhic/expenn)     | Expense and travel management for teams      |
+| [FreeSolo](https://github.com/usmhic/freesolo) | Solo-travel discovery and community          |
 
-## 🤝 Contributions
+## Frameworks and tools
 
-Code, docs, tooling, and developer-experience improvements—explore my
-[GitHub activity](https://github.com/usmhic?tab=overview). 🌱
+<p>
+  <img src="https://skillicons.dev/icons?i=ts,go,cs,java,python,react,nextjs,dotnet,spring,postgres,docker,kubernetes,azure,aws,gcp,githubactions,linux" alt="Frameworks and tools" />
+</p>
 
-More projects, product notes, and ways to work together live at
-[osas.cloud](https://osas.cloud). 🌐
+## Work and ventures 🚀
 
-## 🧰 Toolbox
+[Maersk](https://www.maersk.com) · [APM Terminals](https://www.apmterminals.com) · [Taliware](https://taliware.com) · [Kubeuron](https://kubeuron.com) · [Osas Cloud](https://osas.cloud)
 
-TypeScript · Go · C# · Java · React · Next.js · PostgreSQL · Docker · Cloud · AI
+## Let's connect
 
-> 🛠️ Build. 🚢 Ship. 🧠 Learn. 🔁 Repeat.
+[LinkedIn](https://linkedin.com/in/usmhic) · [GitHub](https://github.com/usmhic)
+
+> Build useful things. Ship them. Keep learning.
