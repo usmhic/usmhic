@@ -21,7 +21,7 @@ jobs:
       run:
         working-directory: osas.cloud
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
         with:
           version: 11.6.0
@@ -46,7 +46,7 @@ jobs:
     name: Build container
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: docker/setup-buildx-action@v3
       - uses: docker/build-push-action@v6
         with:
