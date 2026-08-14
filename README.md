@@ -22,8 +22,5 @@ Software engineer based in Tangier. I build open-source products, developer tool
 
 [Maersk](https://www.maersk.com) · [APM Terminals](https://www.apmterminals.com) · [Taliware](https://taliware.com) · [Kubeuron](https://kubeuron.com) · [Osas Cloud](https://osas.cloud)
 
-## Let's connect
 
-[LinkedIn](https://linkedin.com/in/usmhic) · [GitHub](https://github.com/usmhic)
-
-> Build useful things. Ship them. Keep learning.
+> Build. Ship. Repeat.
