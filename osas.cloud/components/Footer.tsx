@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import { Github, Linkedin } from 'lucide-react';
+import { useLanguage } from '@/lib/language';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { content } = useLanguage();
 
   return (
     <footer className="w-full border-t border-border/50 py-12 px-6 md:px-12 lg:px-24">
@@ -23,7 +25,7 @@ export function Footer() {
             </span>
           </span>
           <span className="text-muted-foreground text-sm font-light">
-            Shipped more than promised.
+            {content.footer.tagline}
           </span>
         </div>
 
@@ -49,7 +51,7 @@ export function Footer() {
         </div>
 
         <div className="text-muted-foreground text-sm font-light">
-          &copy; {currentYear} osas.cloud
+          &copy; {currentYear} osas.cloud. {content.footer.copyright}
         </div>
       </div>
     </footer>

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { BriefcaseBusiness, Mail, Moon, Sun, User } from 'lucide-react';
+import { BriefcaseBusiness, Languages, Mail, Moon, Sun, User } from 'lucide-react';
 import { useTheme } from '@/lib/theme';
+import { useLanguage } from '@/lib/language';
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { content, toggleLanguage } = useLanguage();
   const isDark = theme === 'dark';
 
   useEffect(() => {
@@ -62,33 +64,42 @@ export function Nav() {
             onClick={() => scrollTo('projects')}
             className="inline-flex size-10 items-center justify-center hover:text-foreground transition-colors sm:w-auto sm:px-2"
             data-testid="nav-projects"
-            aria-label="Work"
+            aria-label={content.nav.work}
           >
             <BriefcaseBusiness className="w-4 h-4 sm:hidden" />
-            <span className="hidden sm:inline">Work</span>
+            <span className="hidden sm:inline">{content.nav.work}</span>
           </button>
           <button
             onClick={() => scrollTo('contact')}
             className="inline-flex size-10 items-center justify-center hover:text-foreground transition-colors sm:w-auto sm:px-2"
             data-testid="nav-contact"
-            aria-label="Contact"
+            aria-label={content.nav.contact}
           >
             <Mail className="w-4 h-4 sm:hidden" />
-            <span className="hidden sm:inline">Contact</span>
+            <span className="hidden sm:inline">{content.nav.contact}</span>
           </button>
           <button
             onClick={() => scrollTo('about')}
             className="inline-flex size-10 items-center justify-center hover:text-foreground transition-colors sm:w-auto sm:px-2"
             data-testid="nav-about"
-            aria-label="About"
+            aria-label={content.nav.about}
           >
             <User className="w-4 h-4 sm:hidden" />
-            <span className="hidden sm:inline">About</span>
+            <span className="hidden sm:inline">{content.nav.about}</span>
+          </button>
+          <button
+            onClick={toggleLanguage}
+            className="inline-flex size-10 items-center justify-center border border-border hover:border-foreground hover:text-foreground transition-all duration-200 rounded-sm sm:ml-1 sm:w-auto sm:px-2 font-mono text-xs"
+            aria-label={content.nav.switchToLanguage}
+            data-testid="language-toggle"
+          >
+            <Languages className="w-4 h-4 sm:hidden" />
+            <span className="hidden sm:inline">{content.nav.languageLabel}</span>
           </button>
           <button
             onClick={toggleTheme}
-            className="inline-flex size-10 items-center justify-center border border-border hover:border-foreground hover:text-foreground transition-all duration-200 rounded-sm sm:ml-1"
-            aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+            className="inline-flex size-10 items-center justify-center border border-border hover:border-foreground hover:text-foreground transition-all duration-200 rounded-sm"
+            aria-label={isDark ? content.nav.switchToLight : content.nav.switchToDark}
             data-testid="theme-toggle"
             suppressHydrationWarning
           >

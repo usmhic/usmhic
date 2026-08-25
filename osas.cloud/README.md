@@ -14,7 +14,7 @@ Fumadocs app deployed to GitHub Pages.
 | --- | --- |
 | `app/` | Routes, SEO metadata, docs, search, sitemap, and robots |
 | `components/` | Landing-page sections and shared UI |
-| `content/projects.ts` | Canonical project catalog |
+| `content/site.ts` | Canonical, bilingual (en/fr) site copy and project catalog |
 | `content/docs/` | MDX guides |
 | `lib/` | Shared site and layout configuration |
 | `public/` | Static assets and custom-domain configuration |
@@ -60,8 +60,9 @@ build-time values; this app must never receive runtime secrets.
 ## Contributing
 
 Read the repository [contribution guide](../CONTRIBUTING.md) and
-[agent guide](../AGENTS.md). Project facts belong in `content/projects.ts`;
-presentation belongs in components.
+[agent guide](../AGENTS.md). Site copy and project facts belong in
+`content/site.ts` (with an `en` and `fr` entry each); presentation belongs
+in components.
 
 ## License
 

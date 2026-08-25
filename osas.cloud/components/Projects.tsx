@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Apple, ArrowUpRight, Github, GitBranch, Globe, Lock, Play, Radio } from 'lucide-react';
-import {
-  openSourceProjects,
-  proprietaryProjects,
-  type Project,
-  type ProjectLink,
-} from '@/content/projects';
+import { useLanguage } from '@/lib/language';
+import type { Project, ProjectLink } from '@/content/site';
 
 function getLinkIcon(kind: ProjectLink['kind']) {
   if (kind === 'source') return <Github className="w-4 h-4" />;
@@ -15,13 +11,15 @@ function getLinkIcon(kind: ProjectLink['kind']) {
   return <Globe className="w-4 h-4" />;
 }
 
-const statusLabels: Record<Project['status'], string> = {
-  live: 'Live',
-  testing: 'Testing',
-  building: 'Building',
-};
-
-function StoreButton({ link, projectName }: { link: ProjectLink; projectName: string }) {
+function StoreButton({
+  link,
+  projectName,
+  comingSoonLabel,
+}: {
+  link: ProjectLink;
+  projectName: string;
+  comingSoonLabel: string;
+}) {
   const [shown, setShown] = useState(false);
 
   if (!link.comingSoon) {
@@ -47,8 +45,8 @@ function StoreButton({ link, projectName }: { link: ProjectLink; projectName: st
         window.setTimeout(() => setShown(false), 1600);
       }}
       className="relative inline-flex items-center gap-2 border border-border px-3 py-2 text-xs font-medium uppercase tracking-widest text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-      aria-label={`${projectName} ${link.label} coming soon`}
-      title="Coming soon"
+      aria-label={`${projectName} ${link.label} — ${comingSoonLabel}`}
+      title={comingSoonLabel}
     >
       {getLinkIcon(link.kind)}
       <span>{link.label}</span>
@@ -57,13 +55,25 @@ function StoreButton({ link, projectName }: { link: ProjectLink; projectName: st
           shown ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        Coming soon
+        {comingSoonLabel}
       </span>
     </button>
   );
 }
 
-function ProjectCard({ project, i }: { project: Project; i: number }) {
+function ProjectCard({
+  project,
+  i,
+  statusLabels,
+  progressLabel,
+  comingSoonLabel,
+}: {
+  project: Project;
+  i: number;
+  statusLabels: Record<Project['status'], string>;
+  progressLabel: string;
+  comingSoonLabel: string;
+}) {
   return (
     <motion.div
       key={project.name}
@@ -92,7 +102,7 @@ function ProjectCard({ project, i }: { project: Project; i: number }) {
 
       <div className="mt-8">
         <div className="mb-2 flex items-center justify-between text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
-          <span>Progress</span>
+          <span>{progressLabel}</span>
           <span>{project.progress}%</span>
         </div>
         <div className="h-px bg-border">
@@ -114,7 +124,12 @@ function ProjectCard({ project, i }: { project: Project; i: number }) {
       {project.links.length > 0 && (
         <div className="mt-6 flex flex-wrap gap-2">
           {project.links.map((link) => (
-            <StoreButton key={`${project.name}-${link.kind}`} link={link} projectName={project.name} />
+            <StoreButton
+              key={`${project.name}-${link.kind}`}
+              link={link}
+              projectName={project.name}
+              comingSoonLabel={comingSoonLabel}
+            />
           ))}
         </div>
       )}
@@ -139,6 +154,9 @@ function SectionLabel({ icon, label, delay = 0 }: { icon: React.ReactNode; label
 }
 
 export function Projects() {
+  const { content } = useLanguage();
+  const { projects } = content;
+
   return (
     <section className="py-32 border-t border-border/50" id="projects">
       <motion.h2
@@ -148,27 +166,41 @@ export function Projects() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="text-5xl md:text-6xl font-serif tracking-tight mb-24"
       >
-        Selected Works
+        {projects.title}
       </motion.h2>
 
       {/* Open Source */}
       <div className="mb-20">
-        <SectionLabel icon={<GitBranch className="w-4 h-4" />} label="Open Source" />
+        <SectionLabel icon={<GitBranch className="w-4 h-4" />} label={projects.openSourceLabel} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/50">
-          {openSourceProjects.map((project, i) => (
-            <ProjectCard key={project.name} project={project} i={i} />
+          {projects.openSource.map((project, i) => (
+            <ProjectCard
+              key={project.name}
+              project={project}
+              i={i}
+              statusLabels={projects.statusLabels}
+              progressLabel={projects.progressLabel}
+              comingSoonLabel={projects.comingSoonLabel}
+            />
           ))}
         </div>
       </div>
 
       {/* Proprietary */}
       <div>
-        <SectionLabel icon={<Lock className="w-4 h-4" />} label="Proprietary" delay={0.1} />
+        <SectionLabel icon={<Lock className="w-4 h-4" />} label={projects.proprietaryLabel} delay={0.1} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/50">
-          {proprietaryProjects.map((project, i) => (
-            <ProjectCard key={project.name} project={project} i={i} />
+          {projects.proprietary.map((project, i) => (
+            <ProjectCard
+              key={project.name}
+              project={project}
+              i={i}
+              statusLabels={projects.statusLabels}
+              progressLabel={projects.progressLabel}
+              comingSoonLabel={projects.comingSoonLabel}
+            />
           ))}
-          {proprietaryProjects.length % 2 !== 0 && (
+          {projects.proprietary.length % 2 !== 0 && (
             <div className="bg-background p-8 md:p-12 hidden md:block" />
           )}
         </div>

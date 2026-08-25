@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/language';
 
 export function RequestProject() {
-  const mailToUrl = `mailto:hello@osas.cloud?subject=${encodeURIComponent("Project Request")}&body=${encodeURIComponent("Hi, I'd like to discuss a project idea with you.\n\nProject name: \nDescription: \nTimeline: \nBudget: ")}`;
+  const { content } = useLanguage();
+  const { request } = content;
+  const mailToUrl = `mailto:hello@osas.cloud?subject=${encodeURIComponent(request.mailSubject)}&body=${encodeURIComponent(request.mailBody)}`;
 
   return (
     <section className="py-32" id="contact">
@@ -23,17 +26,17 @@ export function RequestProject() {
         
         <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
           <h2 className="text-4xl md:text-6xl font-serif tracking-tight mb-8">
-            Have an idea?<br />
-            Let&apos;s build it.
+            {request.titleLines[0]}<br />
+            {request.titleLines[1]}
           </h2>
           <p className="text-background/70 text-lg md:text-xl font-light mb-12 max-w-xl">
-            Currently accepting new projects. Let&apos;s discuss your technical requirements and turn your concept into a reality.
+            {request.description}
           </p>
-          <a 
+          <a
             href={mailToUrl}
             className="inline-block border-2 border-background px-8 py-4 text-sm font-medium tracking-widest uppercase hover:bg-background hover:text-foreground transition-all duration-300"
           >
-            Start the conversation
+            {request.cta}
           </a>
         </div>
       </motion.div>
