@@ -11,7 +11,7 @@ RUN --mount=type=cache,id=usmhic-site-pnpm,target=/root/.local/share/pnpm/store 
 
 COPY . .
 
-ARG APP_URL=https://osas.cloud
+ARG APP_URL=https://oussama.hichou.me
 ARG GITHUB_PAGES_URL=https://usmhic.github.io
 ENV NEXT_PUBLIC_APP_URL=$APP_URL \
     NEXT_PUBLIC_GITHUB_PAGES_URL=$GITHUB_PAGES_URL
@@ -20,8 +20,8 @@ RUN pnpm run build
 
 FROM alpine:3.23 AS runtime
 
-LABEL org.opencontainers.image.title="osas.cloud" \
-      org.opencontainers.image.description="Static site for osas.cloud and the usmhic open-source ecosystem" \
+LABEL org.opencontainers.image.title="oussama.hichou.me" \
+      org.opencontainers.image.description="Static site for oussama.hichou.me and the usmhic open-source ecosystem" \
       org.opencontainers.image.source="https://github.com/usmhic/usmhic" \
       org.opencontainers.image.authors="usmhic" \
       org.opencontainers.image.licenses="MIT"

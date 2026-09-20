@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: /osas.cloud
+    directory: /oussama.hichou.me
     schedule:
       interval: monthly
     groups:

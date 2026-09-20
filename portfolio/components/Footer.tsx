@@ -12,16 +12,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-1.5">
           <span className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt=""
-              width={700}
-              height={700}
-              className="size-8 rounded-sm object-cover dark:invert"
-            />
             <span className="flex items-baseline gap-0.5">
-              <span className="font-serif italic text-lg font-semibold text-foreground">osas</span>
-              <span className="font-mono text-xs text-muted-foreground tracking-widest">.cloud</span>
+              <span className="font-serif italic text-lg font-semibold text-foreground">usmhic</span>
             </span>
           </span>
           <span className="text-muted-foreground text-sm font-light">
@@ -31,7 +23,7 @@ export function Footer() {
 
         <div className="flex items-center gap-6 text-muted-foreground">
           <a
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/usmhic"
             target="_blank"
             rel="noreferrer"
             className="hover:text-foreground transition-colors p-2"
@@ -40,7 +32,7 @@ export function Footer() {
             <Linkedin className="w-5 h-5" />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/usmhic"
             target="_blank"
             rel="noreferrer"
             className="hover:text-foreground transition-colors p-2"
@@ -51,7 +43,7 @@ export function Footer() {
         </div>
 
         <div className="text-muted-foreground text-sm font-light">
-          &copy; {currentYear} osas.cloud. {content.footer.copyright}
+          &copy; {currentYear} USMHIC {content.footer.copyright}
         </div>
       </div>
     </footer>

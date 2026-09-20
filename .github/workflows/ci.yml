@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: osas.cloud
+        working-directory: portfolio
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v6
@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
-          cache-dependency-path: osas.cloud/pnpm-lock.yaml
+          cache-dependency-path: oussama.hichou.me/pnpm-lock.yaml
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Type-check
@@ -39,7 +39,7 @@ jobs:
       - name: Build static export
         run: pnpm run build
         env:
-          NEXT_PUBLIC_APP_URL: https://osas.cloud
+          NEXT_PUBLIC_APP_URL: https://oussama.hichou.me
           NEXT_PUBLIC_GITHUB_PAGES_URL: https://usmhic.github.io
 
   container:
@@ -50,8 +50,8 @@ jobs:
       - uses: docker/setup-buildx-action@v3
       - uses: docker/build-push-action@v6
         with:
-          context: ./osas.cloud
-          file: ./osas.cloud/Dockerfile
+          context: ./oussama.hichou.me
+          file: ./oussama.hichou.me/Dockerfile
           push: false
           tags: usmhic-site:ci
           cache-from: type=gha

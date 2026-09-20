@@ -1,7 +1,7 @@
 {
-  "name": "osas.cloud",
+  "name": "oussama.hichou.me",
   "version": "0.0.0",
-  "description": "The statically exported Next.js site for osas.cloud and the usmhic open-source ecosystem.",
+  "description": "The statically exported Next.js site for oussama.hichou.me and the usmhic open-source ecosystem.",
   "private": true,
   "license": "MIT",
   "author": {
@@ -11,9 +11,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/usmhic/usmhic.git",
-    "directory": "osas.cloud"
+    "directory": "oussama.hichou.me"
   },
-  "homepage": "https://osas.cloud",
+  "homepage": "https://oussama.hichou.me",
   "packageManager": "pnpm@11.6.0",
   "scripts": {
     "build": "next build",

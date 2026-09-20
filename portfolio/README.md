@@ -1,10 +1,10 @@
-# osas.cloud
+# oussama.hichou.me
 
 [![CI](https://github.com/usmhic/usmhic/actions/workflows/ci.yml/badge.svg)](https://github.com/usmhic/usmhic/actions/workflows/ci.yml)
 [![Deploy](https://github.com/usmhic/usmhic/actions/workflows/deploy.yml/badge.svg)](https://github.com/usmhic/usmhic/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](../LICENSE)
 
-osas.cloud is the public project studio and documentation site for
+oussama.hichou.me is the public project studio and documentation site for
 [usmhic](https://github.com/usmhic). It is a statically exported Next.js and
 Fumadocs app deployed to GitHub Pages.
 
@@ -28,7 +28,7 @@ Use the tool versions pinned at the repository root:
 
 ```bash
 mise install
-cd osas.cloud
+cd oussama.hichou.me
 pnpm install --frozen-lockfile
 pnpm dev
 ```

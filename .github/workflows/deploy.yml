@@ -1,4 +1,4 @@
-name: Deploy - osas.cloud
+name: Deploy - oussama.hichou.me
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: osas.cloud
+        working-directory: portfolio
 
     steps:
       - name: Checkout repository
@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
-          cache-dependency-path: osas.cloud/pnpm-lock.yaml
+          cache-dependency-path: oussama.hichou.me/pnpm-lock.yaml
 
       - name: Enable and configure GitHub Pages
         if: ${{ env.PAGES_TOKEN != '' }}
@@ -62,7 +62,7 @@ jobs:
         run: pnpm run build
         env:
           NODE_ENV: production
-          NEXT_PUBLIC_APP_URL: https://osas.cloud
+          NEXT_PUBLIC_APP_URL: https://oussama.hichou.me
           NEXT_PUBLIC_GITHUB_PAGES_URL: https://usmhic.github.io
 
       - name: Prepare Pages artifact
@@ -74,7 +74,7 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           include-hidden-files: true
-          path: osas.cloud/out
+          path: oussama.hichou.me/out
 
   deploy:
     needs: build

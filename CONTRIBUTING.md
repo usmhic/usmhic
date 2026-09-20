@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve the usmhic profile or osas.cloud. By participating,
+Thanks for helping improve the usmhic profile or oussama.hichou.me. By participating,
 you agree to follow the [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ## Setup
@@ -8,7 +8,7 @@ you agree to follow the [Code of Conduct](./CODE_OF_CONDUCT.md).
 Install the versions in `mise.toml`, then:
 
 ```bash
-cd osas.cloud
+cd oussama.hichou.me
 pnpm install --frozen-lockfile
 pnpm dev
 ```
@@ -17,12 +17,12 @@ pnpm dev
 
 Branch from `dev` using `feat/`, `fix/`, `docs/`, or `chore/`. Keep
 commits focused and imperative. Project information belongs in
-`osas.cloud/content/projects.ts`; avoid duplicating it in components or MDX.
+`oussama.hichou.me/content/projects.ts`; avoid duplicating it in components or MDX.
 
 Before opening a pull request, run:
 
 ```bash
-cd osas.cloud
+cd oussama.hichou.me
 pnpm run types:check
 pnpm run lint
 pnpm run build

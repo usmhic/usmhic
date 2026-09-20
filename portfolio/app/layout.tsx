@@ -11,20 +11,20 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(primarySiteUrl),
   title: {
-    default: 'osas.cloud - Software design, engineering, and product systems',
-    template: '%s | osas.cloud',
+    default: 'oussama.hichou.me - Software design, engineering, and product systems',
+    template: '%s | oussama.hichou.me',
   },
   description:
-    'osas.cloud designs and builds sharp, reliable software for founders, teams, and operators who need polished products shipped with care.',
+    'oussama.hichou.me designs and builds sharp, reliable software for founders, teams, and operators who need polished products shipped with care.',
   keywords: [
-    'osas.cloud',
+    'oussama.hichou.me',
     'software engineering',
     'product design',
     'web applications',
     'Next.js development',
     'technical consulting',
   ],
-  applicationName: 'osas.cloud',
+  applicationName: 'oussama.hichou.me',
   authors: [{ name: 'usmhic', url: 'https://github.com/usmhic' }],
   creator: 'usmhic',
   publisher: 'usmhic',
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: primarySiteUrl,
-    siteName: 'osas.cloud',
-    title: 'osas.cloud - Software design, engineering, and product systems',
+    siteName: 'oussama.hichou.me',
+    title: 'oussama.hichou.me - Software design, engineering, and product systems',
     description:
       'Sharp, reliable software for founders, teams, and operators who need polished products shipped with care.',
     images: [
@@ -52,13 +52,13 @@ export const metadata: Metadata = {
         url: '/og/docs/image.png',
         width: 1200,
         height: 630,
-        alt: 'osas.cloud',
+        alt: 'oussama.hichou.me',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'osas.cloud - Software design, engineering, and product systems',
+    title: 'oussama.hichou.me - Software design, engineering, and product systems',
     description:
       'Sharp, reliable software for founders, teams, and operators who need polished products shipped with care.',
     images: ['/og/docs/image.png'],

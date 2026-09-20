@@ -20,7 +20,7 @@ Software engineer based in Tangier. I build open-source products, developer tool
 
 ## Work and ventures 🚀
 
-[Maersk](https://www.maersk.com) · [APM Terminals](https://www.apmterminals.com) · [Taliware](https://taliware.com) · [Kubeuron](https://kubeuron.com) · [Osas Cloud](https://osas.cloud)
+[Maersk](https://www.maersk.com) · [APM Terminals](https://www.apmterminals.com) · [Taliware](https://taliware.com) · [Kubeuron](https://kubeuron.com) · [Osas Cloud](https://oussama.hichou.me)
 
 
 > Build. Ship. Repeat.

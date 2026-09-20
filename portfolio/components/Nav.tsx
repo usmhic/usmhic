@@ -41,25 +41,23 @@ export function Nav() {
           className="flex items-center gap-3 group select-none"
           data-testid="nav-brand"
         >
-          <Image
-            src="/logo.png"
-            alt=""
-            width={700}
-            height={700}
-            priority
-            className="size-9 rounded-sm object-cover transition duration-300 group-hover:opacity-80 dark:invert"
-          />
           <span className="flex items-baseline gap-0.5">
             <span className="font-serif italic text-xl font-semibold text-foreground tracking-tight group-hover:opacity-70 transition-opacity duration-300">
-              osas
-            </span>
-            <span className="font-mono text-xs text-muted-foreground tracking-widest group-hover:text-foreground transition-colors duration-300">
-              .cloud
+              usmhic
             </span>
           </span>
         </button>
 
         <nav className="flex items-center gap-1 sm:gap-3 md:gap-8 text-sm font-medium tracking-widest uppercase text-muted-foreground">
+          <button
+            onClick={() => scrollTo('about')}
+            className="inline-flex size-10 items-center justify-center hover:text-foreground transition-colors sm:w-auto sm:px-2"
+            data-testid="nav-about"
+            aria-label={content.nav.about}
+          >
+            <User className="w-4 h-4 sm:hidden" />
+            <span className="hidden sm:inline">{content.nav.about}</span>
+          </button>
           <button
             onClick={() => scrollTo('projects')}
             className="inline-flex size-10 items-center justify-center hover:text-foreground transition-colors sm:w-auto sm:px-2"
@@ -77,15 +75,6 @@ export function Nav() {
           >
             <Mail className="w-4 h-4 sm:hidden" />
             <span className="hidden sm:inline">{content.nav.contact}</span>
-          </button>
-          <button
-            onClick={() => scrollTo('about')}
-            className="inline-flex size-10 items-center justify-center hover:text-foreground transition-colors sm:w-auto sm:px-2"
-            data-testid="nav-about"
-            aria-label={content.nav.about}
-          >
-            <User className="w-4 h-4 sm:hidden" />
-            <span className="hidden sm:inline">{content.nav.about}</span>
           </button>
           <button
             onClick={toggleLanguage}

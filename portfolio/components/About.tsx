@@ -23,7 +23,7 @@ export function About() {
               {about.label}
             </h2>
             <a
-              href="https://osas.cloud"
+              href="https://www.linkedin.com/in/usmhic"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium border border-border px-4 py-3 hover:bg-foreground hover:text-background hover:border-foreground transition-all duration-300 group w-fit"
@@ -95,25 +95,6 @@ export function About() {
               </motion.div>
             ))}
           </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-sm text-muted-foreground font-light"
-          >
-            {about.fullStory}{' '}
-            <a
-              href="https://me.osas.cloud"
-              target="_blank"
-              rel="noreferrer"
-              className="text-foreground underline underline-offset-4 hover:text-muted-foreground transition-colors"
-            >
-              me.osas.cloud
-            </a>
-            .
-          </motion.p>
         </div>
       </div>
     </section>

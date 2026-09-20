@@ -62,7 +62,6 @@ export type SiteContent = {
     intro: string;
     paragraphs: [string, string];
     facts: { label: string; value: string }[];
-    fullStory: string;
   };
   footer: {
     tagline: string;
@@ -118,7 +117,7 @@ export const siteContent: Record<Language, SiteContent> = {
           progress: 100,
           links: [
             { label: 'Website', url: 'https://apikee.com', kind: 'website' },
-            { label: 'Source', url: 'https://github.com/oussama-hichou/apikee', kind: 'source' },
+            { label: 'Source', url: 'https://github.com/apikee-dev', kind: 'source' },
           ],
         },
         {
@@ -237,10 +236,10 @@ export const siteContent: Record<Language, SiteContent> = {
     },
     about: {
       label: 'The person',
-      button: 'me.osas.cloud',
+      button: 'linkedin.com/in/usmhic',
       intro: 'Builder, tinkerer, occasional overthinker — but always someone who ships.',
       paragraphs: [
-        "Behind osas.cloud is a full-stack engineer who's been building real things for real people — from global enterprise platforms to solo open-source projects. Passionate about clean code, bold ideas, and the satisfying click of a feature finally working at 2am.",
+        "Behind oussama.hichou.me is a full-stack engineer who's been building real things for real people — from global enterprise platforms to solo open-source projects. Passionate about clean code, bold ideas, and the satisfying click of a feature finally working at 2am.",
         'Interests stretch across DevSecOps, blockchain, cloud infra, healthcare tech, and satellite data — plus a healthy obsession with travel, photography, aviation, and exploring cities. The kind of person who has too many side projects and not enough regrets about it.',
       ],
       facts: [
@@ -249,7 +248,6 @@ export const siteContent: Record<Language, SiteContent> = {
         { label: 'Driven by', value: 'Curiosity + a good problem to solve' },
         { label: 'Happiest when', value: 'Shipping something real' },
       ],
-      fullStory: 'The full story lives at',
     },
     footer: {
       tagline: 'Shipped more than promised.',
@@ -292,7 +290,7 @@ export const siteContent: Record<Language, SiteContent> = {
           progress: 100,
           links: [
             { label: 'Site web', url: 'https://apikee.com', kind: 'website' },
-            { label: 'Code source', url: 'https://github.com/oussama-hichou/apikee', kind: 'source' },
+            { label: 'Code source', url: 'https://github.com/apikee-dev', kind: 'source' },
           ],
         },
         {
@@ -411,10 +409,10 @@ export const siteContent: Record<Language, SiteContent> = {
     },
     about: {
       label: 'La personne',
-      button: 'me.osas.cloud',
+      button: 'linkedin.com/in/usmhic',
       intro: 'Bâtisseur, bricoleur, parfois un peu trop perfectionniste — mais toujours quelqu\'un qui livre.',
       paragraphs: [
-        "Derrière osas.cloud se trouve un ingénieur full-stack qui construit des choses concrètes pour de vraies personnes — des plateformes d'entreprise mondiales aux projets open source en solo. Passionné par le code propre, les idées audacieuses et la satisfaction d'une fonctionnalité qui fonctionne enfin à 2h du matin.",
+        "Derrière oussama.hichou.me se trouve un ingénieur full-stack qui construit des choses concrètes pour de vraies personnes — des plateformes d'entreprise mondiales aux projets open source en solo. Passionné par le code propre, les idées audacieuses et la satisfaction d'une fonctionnalité qui fonctionne enfin à 2h du matin.",
         "Ses centres d'intérêt vont du DevSecOps à la blockchain, en passant par l'infrastructure cloud, la santé numérique et les données satellites — sans oublier une vraie passion pour les voyages, la photographie, l'aviation et la découverte de nouvelles villes. Le genre de personne qui a trop de projets personnels et pas assez de regrets à ce sujet.",
       ],
       facts: [
@@ -423,7 +421,6 @@ export const siteContent: Record<Language, SiteContent> = {
         { label: 'Motivé par', value: 'La curiosité + un bon problème à résoudre' },
         { label: 'Le plus heureux quand', value: 'Quelque chose de réel est mis en ligne' },
       ],
-      fullStory: "L'histoire complète est sur",
     },
     footer: {
       tagline: "On livre plus qu'on ne promet.",

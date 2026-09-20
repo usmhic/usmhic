@@ -5,7 +5,7 @@ import { useLanguage } from '@/lib/language';
 export function RequestProject() {
   const { content } = useLanguage();
   const { request } = content;
-  const mailToUrl = `mailto:hello@osas.cloud?subject=${encodeURIComponent(request.mailSubject)}&body=${encodeURIComponent(request.mailBody)}`;
+  const mailToUrl = `mailto:me@osas.cloud?subject=${encodeURIComponent(request.mailSubject)}&body=${encodeURIComponent(request.mailBody)}`;
 
   return (
     <section className="py-32" id="contact">

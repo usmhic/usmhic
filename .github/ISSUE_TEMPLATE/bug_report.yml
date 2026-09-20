@@ -9,7 +9,7 @@ body:
       label: Surface
       options:
         - GitHub profile
-        - osas.cloud site
+        - oussama.hichou.me site
         - Documentation
         - Docker or automation
     validations:
