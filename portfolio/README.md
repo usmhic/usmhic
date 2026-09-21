@@ -8,6 +8,12 @@ oussama.hichou.me is the public project studio and documentation site for
 [usmhic](https://github.com/usmhic). It is a statically exported Next.js and
 Fumadocs app deployed to GitHub Pages.
 
+The portfolio opens with a digital business card and direct email, GitHub,
+and LinkedIn links. Scroll for filterable, expandable projects, a personal
+introduction, and contact details. English/French and light/dark preferences
+persist locally; animation respects reduced-motion settings. The landing
+page and its scoped styles live in `app/(home)/`.
+
 ## Structure
 
 | Path | Purpose |

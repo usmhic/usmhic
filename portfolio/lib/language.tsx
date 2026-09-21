@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { siteContent, type Language, type SiteContent } from '@/content/site';
+import React, { createContext, useContext, useEffect } from "react";
+import { usePreference } from "@/lib/preference";
+import { siteContent, type Language, type SiteContent } from "@/content/site";
 
 interface LanguageContextType {
   language: Language;
@@ -10,34 +11,28 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  language: 'en',
+  language: "en",
   content: siteContent.en,
   toggleLanguage: () => {},
 });
 
-const storageKey = 'osas-language';
+const storageKey = "osas-language";
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>(() => {
-    if (typeof window === 'undefined') return 'en';
-
-    const stored = localStorage.getItem(storageKey);
-    if (stored === 'en' || stored === 'fr') {
-      return stored;
-    }
-
-    return 'en';
-  });
+  const [language, toggleLanguage] = usePreference<Language>(
+    storageKey,
+    "en",
+    "fr",
+  );
 
   useEffect(() => {
     document.documentElement.lang = language;
-    localStorage.setItem(storageKey, language);
   }, [language]);
 
-  const toggleLanguage = () => setLanguage((prev) => (prev === 'en' ? 'fr' : 'en'));
-
   return (
-    <LanguageContext.Provider value={{ language, content: siteContent[language], toggleLanguage }}>
+    <LanguageContext.Provider
+      value={{ language, content: siteContent[language], toggleLanguage }}
+    >
       {children}
     </LanguageContext.Provider>
   );
