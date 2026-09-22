@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -23,10 +23,20 @@ export default function Home() {
   const [filter, setFilter] = useState("all");
   const [copyState, setCopyState] = useState("idle");
   const fr = language === "fr";
-  const projects = [
+  const allProjects = [
     ...content.projects.openSource.map((p) => ({ ...p, category: "open" })),
     ...content.projects.proprietary.map((p) => ({ ...p, category: "private" })),
-  ].filter((p) => filter === "all" || p.category === filter);
+  ];
+  const projects = allProjects.filter(
+    (p) => filter === "all" || p.category === filter,
+  );
+  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(
+    () => () => {
+      if (resetTimer.current) clearTimeout(resetTimer.current);
+    },
+    [],
+  );
   async function copyEmail() {
     try {
       await navigator.clipboard.writeText("me@osas.cloud");
@@ -34,6 +44,8 @@ export default function Home() {
     } catch {
       setCopyState("error");
     }
+    if (resetTimer.current) clearTimeout(resetTimer.current);
+    resetTimer.current = setTimeout(() => setCopyState("idle"), 2400);
   }
   return (
     <div className="portfolio" id="top">
@@ -47,7 +59,7 @@ export default function Home() {
         <nav aria-label={fr ? "Navigation principale" : "Main navigation"}>
           <a href="#projects">
             {content.nav.work}
-            <span>08</span>
+            <span>{String(allProjects.length).padStart(2, "0")}</span>
           </a>
           <a href="#about">{content.nav.about}</a>
           <a href="#contact">
