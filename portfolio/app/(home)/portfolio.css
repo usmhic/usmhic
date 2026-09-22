@@ -81,7 +81,7 @@
 .portfolio-nav nav a > span {
   color: var(--subtle);
   font: 9px monospace;
-  align-self: start;
+  align-self: center;
 }
 .nav-settings {
   display: flex;
@@ -190,7 +190,7 @@
   place-items: center;
   position: relative;
   width: 100%;
-  height: clamp(280px, 43vh, 440px);
+  height: clamp(260px, min(34vw, 43vh), 400px);
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -589,200 +589,385 @@
     transform: rotate(360deg);
   }
 }
-@media (min-width: 1600px) {
-  .hero-grid {
-    padding: 75px 0 80px;
-  }
-}
-@media (max-width: 850px) {
-  .hero-grid {
-    gap: 24px;
-    grid-template-columns: 1.15fr 1fr;
-  }
-  .hero-intro h1 {
-    font-size: 78px;
-  }
-  .hero-links {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .hero-description {
-    font-size: 13px;
-  }
-  .about-section {
-    gap: 32px;
-  }
-  .contact-bottom {
-    align-items: start;
-    flex-direction: column;
-  }
-}
-@media (max-width: 600px) {
-  .portfolio {
-    padding-inline: 20px;
-  }
-  .portfolio-nav {
-    height: 76px;
-    gap: 15px;
-  }
-  .wordmark {
-    font-size: 32px;
-  }
+@media (max-width: 1050px) {
   .portfolio-nav nav {
-    gap: 15px;
-    font-size: 11px;
-  }
-  .portfolio-nav nav a > span,
-  .portfolio-nav nav a > svg {
-    display: none;
-  }
-  .nav-settings {
-    padding-left: 8px;
-    gap: 0;
-  }
-  .nav-settings button {
-    width: 30px;
-  }
-  .card-topline {
-    font-size: 8px;
-    gap: 8px;
-    letter-spacing: 0.4px;
-  }
-  .availability {
-    font-size: 8px;
+    gap: 24px;
   }
   .hero-grid {
-    grid-template-columns: 1fr;
-    padding: 34px 0 28px;
-    gap: 30px;
-  }
-  .hello {
-    font-size: 15px;
+    gap: 28px;
   }
   .hero-intro h1 {
-    font-size: clamp(68px, 18vw, 100px);
-  }
-  .hero-description {
-    margin-top: 22px;
-    font-size: 13px;
+    font-size: clamp(60px, 8vw, 82px);
   }
   .hero-links {
-    gap: 22px;
-    margin-top: 22px;
+    gap: 8px 16px;
   }
   .hero-links a {
-    font-size: 11px;
+    font-size: 13px;
   }
   .hero-links .primary-link {
-    padding: 12px 15px;
-    gap: 15px;
+    gap: 12px;
+    padding-inline: 16px;
   }
-  .orbit-art {
-    aspect-ratio: 1.85;
-  }
-  .orbital-sphere {
-    width: 38%;
-  }
-  .art-coordinate {
-    top: 15px;
-    left: 15px;
-    font-size: 8px;
-  }
-  .art-caption {
-    bottom: 15px;
-    left: 15px;
-    right: 15px;
-    font-size: 10px;
-  }
-  .card-bottomline {
-    font-size: 8px;
-    letter-spacing: 0.4px;
+  .section-heading {
     align-items: start;
   }
+  .section-heading > p {
+    max-width: 240px;
+  }
+  .contact-heading h2 {
+    font-size: clamp(38px, 5.5vw, 60px);
+  }
+  .contact-asterisk {
+    font-size: 96px;
+  }
+}
+@media (max-width: 760px) {
+  .portfolio-nav {
+    min-height: 72px;
+    gap: 16px;
+  }
+  .portfolio-nav nav {
+    gap: 20px;
+  }
+  .nav-settings {
+    padding-left: 12px;
+    gap: 0;
+  }
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 32px 0 24px;
+    gap: 28px;
+  }
+  .hero-intro h1 {
+    font-size: clamp(64px, 12vw, 92px);
+  }
+  .hello {
+    margin-bottom: 12px;
+  }
+  .hero-description {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .hero-links {
+    gap: 12px 24px;
+    margin-top: 20px;
+  }
+  .hero-links a {
+    font-size: 14px;
+  }
+  .orbit-art {
+    height: 180px;
+  }
+  .orbital-sphere {
+    width: 120px;
+  }
+  .orbital-sphere b {
+    font-size: 48px;
+  }
+  .art-coordinate {
+    top: 16px;
+    left: 16px;
+  }
+  .art-caption {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+  }
+  .card-bottomline {
+    gap: 24px;
+    padding-block: 16px;
+    letter-spacing: 0.4px;
+  }
   .card-bottomline > span {
-    max-width: 160px;
-    line-height: 1.7;
+    max-width: 240px;
   }
   .card-bottomline a {
-    gap: 8px;
-    white-space: nowrap;
+    gap: 10px;
+    text-align: right;
   }
-  .work-section {
-    padding: 60px 0;
+  .card-bottomline svg {
+    flex-shrink: 0;
   }
   .section-heading {
     display: block;
   }
   .section-heading > p {
+    max-width: none;
     margin-top: 16px;
   }
-  .project-count {
-    display: none;
-  }
-  .project-filters button {
-    padding: 9px 12px;
+  .project-toolbar {
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
   }
   .project-row summary {
-    gap: 14px;
-    padding: 18px 0;
-  }
-  .project-symbol {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-  }
-  .project-name {
-    font-size: 20px;
-  }
-  .project-name small {
-    font-size: 8px;
-    max-width: 160px;
-    line-height: 1.6;
-  }
-  .project-status {
-    font-size: 9px;
-    gap: 5px;
-  }
-  .expand-icon {
-    margin-left: 0;
-    width: 18px;
-    flex-shrink: 0;
+    gap: 16px;
+    padding: 20px 0;
   }
   .project-detail {
-    padding: 8px 10px 24px 54px;
+    padding: 8px 0 24px 64px;
   }
   .about-section {
-    grid-template-columns: 1fr;
-    padding: 55px 0;
-    gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 48px 0;
   }
   .about-copy {
-    padding-top: 26px;
+    padding-top: 0;
   }
   .contact-section {
-    padding: 28px 22px 40px;
+    padding: 32px;
+  }
+  .contact-heading h2 {
+    font-size: clamp(34px, 7vw, 52px);
   }
   .contact-asterisk {
     display: none;
   }
+  .contact-bottom {
+    margin-top: 28px;
+    align-items: start;
+    flex-direction: column;
+  }
+  .portfolio-footer {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .portfolio {
+    padding-inline: 20px;
+  }
+  .portfolio section {
+    scroll-margin-top: 124px;
+  }
+  .portfolio-nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 16px;
+    padding-top: 8px;
+  }
+  .portfolio-nav .wordmark {
+    font-size: 32px;
+    width: fit-content;
+  }
+  .nav-settings {
+    border-left: 0;
+    padding-left: 0;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .portfolio-nav nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 13px;
+  }
+  .portfolio-nav nav a {
+    min-height: 44px;
+  }
+  .business-card {
+    padding-top: 20px;
+  }
+  .card-topline {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  .hero-grid {
+    padding-top: 24px;
+    gap: 24px;
+  }
+  .hero-intro h1 {
+    font-size: clamp(58px, 16.8vw, 80px);
+  }
+  .hello {
+    font-size: 15px;
+  }
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .hero-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    margin-top: 20px;
+  }
+  .hero-links a {
+    justify-content: center;
+    font-size: 14px;
+  }
+  .hero-links .primary-link {
+    grid-column: 1 / -1;
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+  .orbit-art {
+    height: 160px;
+  }
+  .orbital-sphere {
+    width: 100px;
+  }
+  .orbital-sphere b {
+    font-size: 40px;
+  }
+  .art-coordinate {
+    font-size: 9px;
+  }
+  .art-caption {
+    font-size: 11px;
+  }
+  .card-bottomline {
+    font-size: 10px;
+    align-items: center;
+  }
+  .card-bottomline > span {
+    max-width: 150px;
+  }
+  .work-section {
+    padding: 40px 0;
+  }
+  .eyebrow {
+    margin-bottom: 16px;
+  }
+  .project-filters {
+    gap: 4px;
+    width: 100%;
+  }
+  .project-filters button {
+    padding-inline: 10px;
+    flex: 1;
+  }
+  .project-count {
+    font-size: 10px;
+  }
+  .project-row summary {
+    grid-template-columns: 40px minmax(0, 1fr) 20px;
+    gap: 4px 14px;
+  }
+  .project-symbol {
+    width: 40px;
+    height: 40px;
+    grid-row: 1 / 3;
+  }
+  .project-name {
+    font-size: 22px;
+    grid-column: 2;
+  }
+  .project-name small {
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+  .project-status {
+    grid-column: 2;
+    grid-row: 2;
+    margin-left: 0;
+    margin-top: 4px;
+    font-size: 11px;
+  }
+  .expand-icon {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    width: 20px;
+  }
+  .project-detail {
+    padding: 4px 0 24px;
+  }
+  .project-detail > p {
+    font-size: 15px;
+  }
+  .project-destinations {
+    gap: 8px 20px;
+  }
+  .contact-section {
+    padding: 28px 20px 40px;
+    margin-bottom: 32px;
+  }
   .contact-heading h2 {
-    font-size: clamp(30px, 8.5vw, 46px);
+    font-size: clamp(28px, 7.8vw, 38px);
   }
   .contact-heading h2 a {
     gap: 8px;
   }
-  .contact-bottom {
-    font-size: 11px;
-    margin-top: 28px;
+  .contact-heading h2 svg {
+    flex-shrink: 0;
   }
-  .portfolio-footer {
-    gap: 16px;
+  .contact-bottom {
+    font-size: 13px;
+  }
+  .email-actions {
+    gap: 10px;
   }
   .portfolio-footer > span {
-    font-size: 9px;
+    font-size: 11px;
   }
   .portfolio-footer > a:last-child {
-    font-size: 9px;
+    font-size: 12px;
+    min-height: 44px;
+  }
+}
+@media (min-width: 761px) and (max-height: 700px) {
+  .business-card {
+    padding-top: 16px;
+  }
+  .hero-grid {
+    padding-block: 24px;
+  }
+  .hero-intro h1 {
+    font-size: clamp(58px, 7vw, 84px);
+  }
+  .hero-description {
+    margin-top: 16px;
+  }
+  .hero-links {
+    margin-top: 16px;
+  }
+  .orbit-art {
+    height: 300px;
+  }
+  .orbital-sphere {
+    width: 210px;
+  }
+  .card-bottomline {
+    padding-block: 14px;
+  }
+}
+/* Keep primary links in view on landscape phones and shallow windows. */
+@media (min-width: 761px) and (max-height: 500px) {
+  .portfolio-nav {
+    min-height: 56px;
+  }
+  .business-card {
+    padding-top: 12px;
+  }
+  .hero-grid {
+    padding-block: 16px;
+  }
+  .hello {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .hero-intro h1 {
+    font-size: 48px;
+  }
+  .hero-description {
+    font-size: 13px;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+  .hero-links {
+    margin-top: 12px;
+  }
+  .orbit-art {
+    height: 230px;
+  }
+  .orbital-sphere {
+    width: 150px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -796,4 +981,3 @@
     transition: none !important;
   }
 }
-
