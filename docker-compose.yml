@@ -3,7 +3,7 @@ name: usmhic-site
 services:
   site:
     build:
-      context: ./oussama.hichou.me
+      context: ./portfolio
       args:
         APP_URL: ${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
         GITHUB_PAGES_URL: ${NEXT_PUBLIC_GITHUB_PAGES_URL:-https://usmhic.github.io}

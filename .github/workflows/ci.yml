@@ -25,11 +25,23 @@ jobs:
       - uses: pnpm/action-setup@v6
         with:
           version: 11.6.0
+          run_install: false
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: pnpm
-          cache-dependency-path: oussama.hichou.me/pnpm-lock.yaml
+      # setup-node's built-in `cache: pnpm` asks pnpm for its store path before
+      # anything is installed, then fails because that directory does not exist
+      # yet. Pinning the store ourselves keeps the cache key explicit.
+      - name: Configure pnpm store
+        run: |
+          echo "PNPM_STORE_PATH=$HOME/.pnpm-store" >> "$GITHUB_ENV"
+          pnpm config set store-dir "$HOME/.pnpm-store" --global
+      - uses: actions/cache@v6
+        with:
+          path: ${{ env.PNPM_STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('portfolio/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Type-check
@@ -50,8 +62,8 @@ jobs:
       - uses: docker/setup-buildx-action@v3
       - uses: docker/build-push-action@v6
         with:
-          context: ./oussama.hichou.me
-          file: ./oussama.hichou.me/Dockerfile
+          context: ./portfolio
+          file: ./portfolio/Dockerfile
           push: false
           tags: usmhic-site:ci
           cache-from: type=gha
