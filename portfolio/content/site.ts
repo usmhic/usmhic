@@ -75,8 +75,8 @@ const tags = {
   expenn: ['Next.js', '.NET', 'PostgreSQL', 'Expo'],
   freesolo: ['Next.js', 'Java Spring Boot', 'PostgreSQL', 'Expo'],
   localm: ['Go', 'OpenAI API', 'Local AI', 'Docker'],
-  qudo: ['AI', 'Next.js', 'PostgreSQL'],
-  kubeuron: ['Platform', 'Kubernetes', 'Next.js'],
+  kubeuron: ['AI', 'Next.js', 'PostgreSQL'],
+  qudo: ['Platform', 'Kubernetes', 'Next.js'],
   avycenna: ['Healthcare', 'Telemedicine', 'React Native'],
 };
 
@@ -189,22 +189,22 @@ export const siteContent: Record<Language, SiteContent> = {
       ],
       proprietary: [
         {
-          name: 'Qudo',
+          name: 'Kubeuron',
           description:
             'AI-powered review management platform that helps small businesses auto-respond to customer reviews and monitor online reputation.',
-          tags: tags.qudo,
+          tags: tags.kubeuron,
+          status: 'live',
+          progress: 100,
+          links: [{ label: 'Website', url: 'https://kubeuron.com', kind: 'website' }],
+        },
+        {
+          name: 'QudoInk',
+          description:
+            'Digital Busines Card: One clean card. One obvious next step — book, call, or message. Share a link or QR. No app for them. No clutter for you.',
+          tags: tags.kubeuron,
           status: 'live',
           progress: 100,
           links: [{ label: 'Website', url: 'https://qudo.ink', kind: 'website' }],
-        },
-        {
-          name: 'Kubeuron',
-          description:
-            'Developer platform bridging technical project management and software engineering workflows with business and technology in one place.',
-          tags: tags.kubeuron,
-          status: 'building',
-          progress: 36,
-          links: [],
         },
         {
           name: 'Avycenna',
